@@ -7,8 +7,8 @@ Check the page here: [https://pokemingada.com](https://pokemingada.com)
 
 # Screenshots
 ## Ranking/Leaderboard
-[ranking](/docs/leaderboard.png?raw=true)
+[ranking](docs/leaderboard.png?raw=true)
 ## Battle calendar
-[calendar](/docs/calendar.png?raw=true)
+[calendar](docs/calendar.png?raw=true)
 ## Ruleset
-[rules](/docs/ruleset.png?raw=true)
+[rules](docs/ruleset.png?raw=true)
