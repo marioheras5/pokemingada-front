@@ -3,7 +3,7 @@
 - Coded in TS, using the React/Next.js framework.
 - Made in a weekend.
 - Self-hosted.
-###Check the page here: [https://pokemingada.com](https://pokemingada.com)
+### Check the page here: [https://pokemingada.com](https://pokemingada.com)
 
 # Screenshots
 ## Ranking/Leaderboard
