@@ -3,6 +3,114 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --text-shadow-left: #333333;
+  --text-shadow-right: #111111;
+}
+
+.loser-r {
+  background: linear-gradient(to right, color-mix(in oklab, var(--color-red-700) 30%, transparent), transparent);
+}
+
+.loser-l {
+  background: linear-gradient(to left, color-mix(in oklab, var(--color-red-700) 30%, transparent), transparent);
+}
+
+.winner-r {
+  background: linear-gradient(to right, color-mix(in oklab, var(--color-blue-700) 30%, transparent), transparent);
+}
+
+.winner-l {
+  background: linear-gradient(to left, color-mix(in oklab, var(--color-blue-700) 30%, transparent), transparent);
+}
+.glass-card {
+  width: 240px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 12px 6px rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+}
+
+.glass-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  );
+}
+
+body {
+  color: var(--foreground);
+  font-family: WildWords, sans-serif;
+}
+
+.text-shadow-animation:hover, .text-shadow-animation.active {
+  color: var(--color-indigo-200);
+  transition: color 0.15s ease-in-out;
+  animation: textShadow 1.6s infinite;
+}
+
+.third {
+  color: var(--color-amber-600);
+  transition: color 0.15s ease-in-out;
+  animation: textShadow 1.6s infinite;
+}
+
+.second {
+  color: var(--color-gray-400);
+  transition: color 0.15s ease-in-out;
+  animation: textShadow 1.6s infinite;
+}
+
+.first {
+  color: var(--color-yellow-300);
+  transition: color 0.15s ease-in-out;
+  animation: textShadow 1.6s infinite;
+}
+
+.bg-auto-100 {
+  background-size: 100% auto;
+}
+
+/* Clase principal */
+.hover-spin-accelerate {
+  transform: rotate(0deg); /* posición inicial */
+  transition: transform 0s; /* instantáneo al quitar hover */
+}
+
+/* Al hacer hover */
+.hover-spin-accelerate:hover {
+  animation: spin-accelerate 2s linear infinite; /* empieza lenta */
 }
 
 @theme inline {
@@ -12,15 +120,96 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@font-face {
+  font-family: "WildWords";
+  src: url("/fonts/wild-words.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "BambooBrush";
+  src: url("/fonts/bamboo-brush.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@keyframes spin-accelerate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px var(--text-shadow-left), -0.4389924193300864px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px var(--text-shadow-left), -2.7928974010788217px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px var(--text-shadow-left), -0.02956275843481219px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px var(--text-shadow-left), -0.40218538552878136px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px var(--text-shadow-left), -3.4794037899852017px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px var(--text-shadow-left), -1.6125630401149584px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px var(--text-shadow-left), -0.7015590085143956px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px var(--text-shadow-left), -3.896914047650351px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px var(--text-shadow-left), -3.870905614848819px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px var(--text-shadow-left), -2.231056963361899px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px var(--text-shadow-left), -0.08084290417898504px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px var(--text-shadow-left), -2.3758461067427543px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px var(--text-shadow-left), -2.202193051050636px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px var(--text-shadow-left), -2.8638780614874975px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px var(--text-shadow-left), -0.48874025155497314px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px var(--text-shadow-left), -1.8948491305757957px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px var(--text-shadow-left), -0.0833037308038857px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px var(--text-shadow-left), -0.09769827255241735px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px var(--text-shadow-left), -3.443339761481782px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px var(--text-shadow-left), -2.1841838852799786px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px var(--text-shadow-left), -2.6208764473832513px 0 1px var(--text-shadow-right), 0 0 3px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
