@@ -147,7 +147,7 @@ export default function Schedule() {
                 <div className="flex flex-col p-2 gap-2">
                     <Battle players={"noifred/bmage"} result={"2/0"} bo3={true}></Battle>
                     <Battle players={"hibi/brawnio"} result={"0/0"} bo3={true}></Battle>
-                    <Battle players={"kush/stick"} result={"0/0"} bo3={true}></Battle>
+                    <Battle players={"kush/stick"} result={"2/0"} bo3={true}></Battle>
                     <Battle players={"anxoa/derial"} result={"1/1"} bo3={true}></Battle>
                     <Battle players={"daude/dasen"} result={"0/0"} bo3={true}></Battle>
                 </div>

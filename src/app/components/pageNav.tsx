@@ -21,6 +21,7 @@ export default function PageNav() {
                 <Link className={pathName === "/" ? "active " + linkClasses : linkClasses} href="/">RANKING</Link>
                 <Link className={pathName === "/battles" ? "active " + linkClasses : linkClasses} href="/battles">CALENDARIO</Link>
                 <Link className={pathName === "/rules" ? "active " + linkClasses : linkClasses} href="/rules">REGLAS</Link>
+                <Link className={pathName === "/bracket" ? "active " + linkClasses : linkClasses} href="/bracket">BRACKET</Link>
             </div>
 
             {/* Phone */}
@@ -34,6 +35,7 @@ export default function PageNav() {
                         <Link onClick={() => setIsOpen(false)} className={"text-4xl " + (pathName === "/" ? "active " + linkClasses : linkClasses)} href="/">RANKING</Link>
                         <Link onClick={() => setIsOpen(false)} className={"text-4xl " + (pathName === "/battles" ? "active " + linkClasses : linkClasses)} href="/battles">CALENDARIO</Link>
                         <Link onClick={() => setIsOpen(false)} className={"text-4xl " + (pathName === "/rules" ? "active " + linkClasses : linkClasses)} href="/rules">REGLAS</Link>
+                        <Link onClick={() => setIsOpen(false)} className={"text-4xl " + (pathName === "/bracket" ? "active " + linkClasses : linkClasses)} href="/bracket">BRACKET</Link>
                     </div>
                 )}
             </div>

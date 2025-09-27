@@ -129,13 +129,27 @@ async function GetPokemon(contenido: string) {
     return pokemonList;
 }
 
-function GetScore(split: string[]) {
+function GetScore(name: string, split: string[]) {
     if (split.length < 3) {
         return [0, 0, 0];
     }
-    const wins: number = Number(split[0])
-    const loses: number = Number(split[1])
-    const points: number = Number(split[2])
+
+    const json: {[playerName: string]: [string, string, string]} = {
+      "anxoa": ["0","8","0"],
+      "bmage": ["1","5","3"],
+      "brawnio": ["3","1","3"],
+      "dasen": ["4","1","4"],
+      "daude": ["3","2","5"],
+      "derial": ["0","8","0"],
+      "hibi": ["5","2","9"],
+      "kush": ["6","1","12"],
+      "noifred": ["5","3","13"],
+      "stick": ["5","3","7"]
+    };
+
+    const wins: number = Number(json[name][0])
+    const loses: number = Number(json[name][1])
+    const points: number = Number(json[name][2])
 
     return [wins, loses, points];
 }
@@ -172,7 +186,7 @@ export default function PlayerList() {
           }
           // wins:$:loses:$:pts:$:Resto
           const split = contenido.split(':$:');
-          const score = GetScore(split);
+          const score = GetScore(playerName, split);
 
           let pkmnList: PokemonProps[];
           if (split.length < 3) {
